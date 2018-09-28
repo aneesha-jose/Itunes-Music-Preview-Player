@@ -14,4 +14,7 @@ public interface ApiParameters {
     String ARTWORK_URL_60 = "artworkUrl60";
     String ARTWORK_URL_100 = "artworkUrl100";
     String TRACK_TIME_IN_MILLIS = "trackTimeMillis";
+
+    String TERM = "term";
+    String LIMIT = "limit";
 }

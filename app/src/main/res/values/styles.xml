@@ -8,4 +8,213 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="DialogFullscreen" parent="Base.Theme.AppCompat.Dialog">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <!-- No backgrounds, titles or window float -->
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:fontFamily">@font/cairo</item>
+    </style>
+
+    <!--Text Styles-->
+
+    <style name="HeaderText" parent="FontBook">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/header_text</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="TittleText_ExtraNormalMediumGeneral" parent="FontMedium">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="TittleText_ExtraNormalLargeGeneral" parent="FontMedium">
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="ExtraLargeThinGeneral" parent="FontThin">
+        <item name="android:textSize">@dimen/text_xxlarge</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <!-- Medium General-->
+
+    <style name="BottomSheetHeader" parent="FontMedium">
+        <item name="android:textSize">@dimen/text_xxlarge</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="LargeMediumGeneral" parent="FontMedium">
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="ExtraNormalMediumGeneral" parent="FontMedium">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="ExtraNormalMediumAccent" parent="FontMedium">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="NormalMediumGeneral" parent="FontMedium">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/general_text</item>
+    </style>
+
+    <style name="SmallMediumGeneral" parent="FontMedium">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+
+    <!--Medium General End-->
+
+    <!--Medium Faded-->
+
+    <style name="NormalMediumFaded" parent="FontMedium">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/faded_text</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <!--Medium Faded End-->
+
+    <!-- Book General -->
+
+    <style name="ExtraLargeLightGeneral" parent="FontLight">
+        <item name="android:textSize">@dimen/font_24sp</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+        <item name="android:textColor">@color/general_text</item>
+    </style>
+
+    <style name="ExtraNormalBookGeneral" parent="FontLight">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="NormalBookGeneral" parent="FontLight">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="SmallBookGeneral" parent="FontLight">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
+    </style>
+
+    <style name="LargeBookGeneral" parent="FontLight">
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
+    </style>
+
+    <style name="ExtraSmallBookGeneral" parent="FontLight">
+        <item name="android:textSize">@dimen/text_xsmall</item>
+        <item name="android:textColor">@color/general_text</item>
+    </style>
+
+    <!--Book General End-->
+
+    <!-- Book Faded -->
+
+    <style name="ExtraNormalBookFaded" parent="FontLight">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/faded_text</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="NormalBookFaded" parent="FontLight">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/faded_text</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
+    </style>
+
+    <style name="SmallBookFaded" parent="FontLight">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/faded_text</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
+    </style>
+
+    <!--Book Faded End-->
+
+    <!--Text Styles-->
+
+    <style name="LargeDarkBold" parent="FontMedium">
+        <item name="android:textSize">@dimen/text_xxlarge</item>
+        <item name="android:textColor">@color/text_gray</item>
+    </style>
+
+    <style name="ExtraNormalLightGeneral" parent="FontLight">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="SmallDark" parent="FontMedium">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="SmallLight" parent="FontLight">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="ExtraSmallLight" parent="FontLight">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="ExtraSmallText">
+        <item name="android:textSize">@dimen/text_xsmall</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="FontBook">
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/cairo</item>
+    </style>
+
+    <style name="FontLight">
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/cairo_light</item>
+    </style>
+
+    <style name="FontMedium">
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/cairo_semibold</item>
+    </style>
+
+    <style name="FontThin">
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/cairo_extralight</item>
+    </style>
+
 </resources>

@@ -29,7 +29,7 @@ public class SharedPref {
     }
 
     public int getScreenSizeCount() {
-        return getInt(Constants.SCREEN_SIZE_COUNT);
+        return getInt(Constants.SCREEN_SIZE_COUNT, 4);
     }
 
     // Getters
@@ -42,6 +42,16 @@ public class SharedPref {
      */
     public int getInt(String key) {
         return preferences.getInt(key, 0);
+    }
+
+    /**
+     * Get int value from SharedPreferences at 'key'. If key not found, return 'defaultValue'
+     *
+     * @param key SharedPreferences key
+     * @return int value at 'key' or 'defaultValue' if key not found
+     */
+    public int getInt(String key, int defaultValue) {
+        return preferences.getInt(key, defaultValue);
     }
 
     /**

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_8dp"
+    android:background="@color/white"
+    android:padding="@dimen/_16dp">
+
+    <ImageView
+        android:id="@+id/trackImage"
+        android:layout_width="@dimen/_40dp"
+        android:layout_height="@dimen/_40dp"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/tv_track_name"
+        style="@style/NormalMediumGeneral"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_8dp"
+        android:layout_marginStart="@dimen/_8dp"
+        android:layout_toEndOf="@+id/trackImage"
+        android:layout_toRightOf="@+id/trackImage"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        tools:text="We Don't Talk Anymore" />
+
+    <TextView
+        android:id="@+id/tv_track_info"
+        style="@style/NormalMediumFaded"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_track_name"
+        android:layout_marginLeft="@dimen/_8dp"
+        android:layout_marginStart="@dimen/_8dp"
+        android:layout_marginTop="@dimen/_neg2dp"
+        android:layout_toEndOf="@+id/trackImage"
+        android:layout_toRightOf="@+id/trackImage"
+        android:maxLines="1"
+        tools:text="Charlie Puth | We Don't Talk Anymore" />
+
+</RelativeLayout>

@@ -2,7 +2,23 @@
 <resources>
     <color name="colorPrimary">#62dcdb</color>
     <color name="colorPrimaryDark">#1eaaa9</color>
-    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorAccent">#9E9E9E</color>
 
     <color name="background">#f9f9f9</color>
+    <color name="toolbar">@color/colorPrimary</color>
+    <color name="toolbar_text">@color/white</color>
+    <color name="divider_gray">#f1f1f1</color>
+
+    <color name="general_text">@color/deep_dark_gray</color>
+    <color name="clickable_text">@color/colorPrimary</color>
+    <color name="faded_text">#a7a6a6</color>
+    <color name="light_text">@color/shaded_gray</color>
+    <color name="header_text">#a7a6a6</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="shadow_gray">#0f0f0f</color>
+    <color name="deep_dark_gray">#393939</color>
+    <color name="shaded_gray">#D3D3D3</color>
+    <color name="text_gray">#b8b8b8</color>
+
 </resources>
