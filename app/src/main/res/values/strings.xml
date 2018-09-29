@@ -2,5 +2,7 @@
     <string name="app_name">MPlayer</string>
     <string name="listen_to_fav_from_itunes">Listen to your favourite\n songs from Itunes.</string>
     <string name="search_music_title_artist_movie">Search Music by Title, Artist, Movie etc.</string>
-    <string name="all_tracks">All Songs • %d</string>
+    <string name="all_tracks">All Songs • %s</string>
+    <string name="track_not_found">Track not Found</string>
+    <string name="error_while_searching_for_tracks">Oops! We encountered an error while looking!</string>
 </resources>

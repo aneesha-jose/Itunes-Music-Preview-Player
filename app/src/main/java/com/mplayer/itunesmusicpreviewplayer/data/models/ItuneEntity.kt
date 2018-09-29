@@ -2,6 +2,7 @@ package com.mplayer.itunesmusicpreviewplayer.data.models
 
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -10,7 +11,7 @@ import com.mplayer.itunesmusicpreviewplayer.common.Constants
 
 @Entity(tableName = Constants.FAV_TRACK_INFO)
 data class ItuneEntity(@SerializedName(ApiParameters.WRAPPER_TYPE) @ColumnInfo(name = Constants.WRAPPER_TYPE) val wrapperType: String?,
-                       @SerializedName(ApiParameters.TRACK_ID) @ColumnInfo(name = Constants.TRACK_ID) val trackId: String?,
+                       @SerializedName(ApiParameters.TRACK_ID) @ColumnInfo(name = Constants.TRACK_ID) @PrimaryKey val trackId: String,
                        @SerializedName(ApiParameters.ARTISTS_NAME) @ColumnInfo(name = Constants.ARTISTS_NAME) val artistsName: String?,
                        @SerializedName(ApiParameters.COLLECTION_NAME) @ColumnInfo(name = Constants.COLLECTION_NAME) val collectionName: String?,
                        @SerializedName(ApiParameters.TRACK_NAME) @ColumnInfo(name = Constants.TRACK_NAME) val trackName: String?,

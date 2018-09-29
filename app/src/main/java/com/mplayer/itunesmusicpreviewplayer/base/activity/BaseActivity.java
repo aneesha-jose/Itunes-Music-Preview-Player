@@ -3,10 +3,15 @@ package com.mplayer.itunesmusicpreviewplayer.base.activity;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mplayer.itunesmusicpreviewplayer.DaggerDependencyInjectorComponent;
 import com.mplayer.itunesmusicpreviewplayer.DependencyInjectorComponent;
+import com.mplayer.itunesmusicpreviewplayer.R;
 import com.mplayer.itunesmusicpreviewplayer.android.MPlayerApp;
 import com.mplayer.itunesmusicpreviewplayer.android.qualifiers.ActivityContext;
 import com.mplayer.itunesmusicpreviewplayer.android.qualifiers.ApplicationContext;
@@ -66,5 +71,37 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public BaseActivityComponent getBaseActivityComponent() {
         return activityComponent;
+    }
+
+    protected void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    protected void showToast(@StringRes int message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    public void showLoadingDialog(String message, boolean isCancellable) {
+        if (isCancellable) {
+            loadingDialog.setCancelable(true);
+        } else {
+            loadingDialog.setCancelable(false);
+        }
+
+        TextView tvLoadingText = loadingDialog.findViewById(R.id.tvLoadingText);
+
+        if (message != null && !message.isEmpty()) {
+            tvLoadingText.setVisibility(View.VISIBLE);
+            tvLoadingText.setText(message);
+        } else {
+            tvLoadingText.setVisibility(View.GONE);
+        }
+        loadingDialog.show();
+    }
+
+    public void dismissLoadingDialog() {
+        if (loadingDialog != null && loadingDialog.isShowing()) {
+            loadingDialog.dismiss();
+        }
     }
 }

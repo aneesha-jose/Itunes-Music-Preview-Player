@@ -24,4 +24,5 @@ public interface Constants {
     String SCREEN_SIZE_COUNT = "screen_size_count";
 
     String sampleImageViewSource = "https://is2-ssl.mzstatic.com/image/thumb/Video62/v4/59/3f/c9/593fc9e8-b453-4f48-cf43-70c013a70fec/source/30x30bb.jpg";
+    String NA = "NA";
 }

@@ -18,4 +18,7 @@ interface SearchedWordsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun addSearchedWord(searchedWords: SearchedWords)
 
+    @Query("SELECT * FROM " + Constants.SEARCHED_WORDS + " where " + Constants.SEARCH_TEXT + " = :searchedWord")
+    fun findSearchedWordByString(searchedWord: String): SearchedWords?
+
 }

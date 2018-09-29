@@ -32,6 +32,10 @@ public class SharedPref {
         return getInt(Constants.SCREEN_SIZE_COUNT, 4);
     }
 
+    public void putScreenSizeCount(int count) {
+        putInt(Constants.SCREEN_SIZE_COUNT, count);
+    }
+
     // Getters
 
     /**

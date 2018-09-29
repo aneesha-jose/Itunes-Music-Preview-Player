@@ -20,6 +20,11 @@ class DataRepository(val apiService: ApiService, val appDatabase: AppDatabase) :
         appDatabase.searchedWordsDao().addSearchedWord(SearchedWords(searchtext = searchedWord))
     }
 
+    fun addIfMissingSearchedWord(searchedWord: String) {
+        if (appDatabase.searchedWordsDao().findSearchedWordByString(searchedWord) == null)
+            addSearchedWord(searchedWord)
+    }
+
     fun getAllFavTracks(): LiveData<List<ItuneEntity>> {
         return appDatabase.favTrackInfoDao().getAll()
     }

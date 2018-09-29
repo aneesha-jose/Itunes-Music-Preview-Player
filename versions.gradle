@@ -8,7 +8,7 @@ ext.versions = [
         buildTools             : '28.0.2',
 
         //Support Libraries
-        supportLibs            : '28.0.0-rc02',
+        supportLibs            : '28.0.0',
 
         //ButterKnife
         butterKnife            : '8.8.1',
@@ -34,5 +34,7 @@ ext.versions = [
         dagger                 : '2.17',
 
         room                   : '1.1.1',
+
+        lifecycle_version      : "1.1.1"
 
 ]

@@ -20,19 +20,30 @@ class ItuneEntityBlockWrapperViewModel constructor(dataRepository: DataRepositor
     var limit: Int = 4
     private lateinit var searchWordsData: LiveData<List<SearchedWords>>
     private var tracksData: MutableLiveData<ResponseWrapper<List<ItuneEntityBlockWrapper>>> = MutableLiveData()
-    private var totalResultCount: MutableLiveData<String> = MutableLiveData()
+    private var allSongsCount: MutableLiveData<String> = MutableLiveData()
 
     fun getAllSearchedWords(): LiveData<List<SearchedWords>> {
         searchWordsData = dataRepository.getAllSearchedWords()
         return searchWordsData
     }
 
+    fun addSearchWord(searchedWord: String) {
+        dataRepository.addIfMissingSearchedWord(searchedWord)
+    }
+
     fun searchTracks(constraint: String, limit: Int = this.limit) {
         this.limit = limit
         var options = LinkedHashMap<String, String>()
         options.put(ApiParameters.TERM, constraint)
-        options.put(ApiParameters.LIMIT, limit.toString())
         makeNetworkCall(ApiCallTags.GET_TRACKS, dataRepository.getTracksToSearch(options), this, null)
+    }
+
+    fun getTrackData(): MutableLiveData<ResponseWrapper<List<ItuneEntityBlockWrapper>>> {
+        return tracksData
+    }
+
+    fun getAllSongsCount(): MutableLiveData<String> {
+        return allSongsCount
     }
 
     override fun onSuccess(callTag: String?, response: ResponseWrapper<ItuneResponse>?, extras: HashMap<String, Any>?) {
@@ -44,8 +55,8 @@ class ItuneEntityBlockWrapperViewModel constructor(dataRepository: DataRepositor
     private fun handleGetTrackSuccessResponse(response: ResponseWrapper<ItuneResponse>?) {
         val ituneResponse = response?.data
         val trackblocks = ituneResponse?.results?.filter { ituneEntity -> Constants.TRACK == ituneEntity.wrapperType }?.chunked(limit)
-        totalResultCount.value = ituneResponse?.resultCount.toString()
-        tracksData.value = ResponseWrapper(data = trackblocks?.map { list -> ItuneEntityBlockWrapper(list) })
+        allSongsCount.value = ituneResponse?.resultCount.toString()
+        tracksData.value = ResponseWrapper(data = trackblocks?.filter { !trackblocks.isEmpty() }?.map { list -> ItuneEntityBlockWrapper(list) })
     }
 
     override fun onError(callTag: String?, response: ResponseWrapper<ItuneResponse>?, extras: HashMap<String, Any>?) {
@@ -55,7 +66,7 @@ class ItuneEntityBlockWrapperViewModel constructor(dataRepository: DataRepositor
     }
 
     private fun handleGetTrackErrorResponse(response: ResponseWrapper<ItuneResponse>?) {
-        totalResultCount.value = "-"
+        allSongsCount.value = "-"
         tracksData.value = ResponseWrapper(apiException = response?.apiException)
     }
 

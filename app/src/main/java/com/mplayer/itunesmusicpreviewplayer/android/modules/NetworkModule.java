@@ -86,7 +86,7 @@ public class NetworkModule {
     @Provides
     public AppDatabase getLocalDataSource(@ApplicationContext Context context) {
         return Room.databaseBuilder(context.getApplicationContext(),
-                AppDatabase.class, Constants.DB_NAME).build();
+                AppDatabase.class, Constants.DB_NAME).allowMainThreadQueries().build();
     }
 
     @ApplicationScope
