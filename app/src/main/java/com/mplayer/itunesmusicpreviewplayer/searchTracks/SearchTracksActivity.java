@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
+import android.view.MenuItem;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
@@ -94,6 +95,10 @@ public class SearchTracksActivity extends BaseActivity implements ItunesEntityBl
         ituneEntityBlockWrapperViewModel.getTrackData().observe(this, new CustomObserver<>(blockWrapperChangeObserver));
         ituneEntityBlockWrapperViewModel.getAllSongsCount().observe(this, this::updateTotalCount);
         ituneEntityBlockWrapperViewModel.getAllSearchedWords().observe(this, this::updateSearchWords);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.shape);
+        }
     }
 
     private void initView() {
@@ -173,5 +178,10 @@ public class SearchTracksActivity extends BaseActivity implements ItunesEntityBl
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.exit_to_right, R.anim.stay);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 }

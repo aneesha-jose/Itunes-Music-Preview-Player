@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,12 +10,97 @@
     <ImageView
         android:id="@+id/iv_track_image"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3" />
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_player" />
 
     <RelativeLayout
+        android:id="@+id/rl_player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"></RelativeLayout>
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/_16dp">
 
-</LinearLayout>
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressDrawable="@drawable/seekbar_style"
+            android:thumb="@android:color/transparent" />
+
+        <TextView
+            android:id="@+id/tv_current_track_time"
+            style="@style/SmallBookFaded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seekbar"
+            tools:text="2:00" />
+
+        <TextView
+            android:id="@+id/tv_total_track_time"
+            style="@style/SmallBookFaded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/seekbar"
+            tools:text="2:00" />
+
+        <TextView
+            android:id="@+id/tv_track_name"
+            style="@style/BottomSheetHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_current_track_time"
+            android:layout_centerHorizontal="true"
+            tools:text="Small Town" />
+
+        <TextView
+            android:id="@+id/tv_track_info"
+            style="@style/NormalMediumFaded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_track_name"
+            android:layout_centerHorizontal="true"
+            tools:text="Someone | something" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_track_info"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ib_playlist"
+                android:layout_width="@dimen/_48dp"
+                android:layout_height="@dimen/_48dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/_16dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/combined_shape" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16dp"
+                android:layout_weight="1"
+                android:src="@drawable/btn_play"
+                app:backgroundTint="@color/white"
+                app:elevation="@dimen/_3dp"
+                app:fabCustomSize="@dimen/_70dp" />
+
+            <ImageButton
+                android:id="@+id/ib_fav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/_16dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/fav_selector" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

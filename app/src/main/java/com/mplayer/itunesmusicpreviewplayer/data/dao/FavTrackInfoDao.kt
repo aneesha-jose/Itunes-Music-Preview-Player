@@ -17,4 +17,7 @@ interface FavTrackInfoDao {
 
     @Delete
     fun deleteFavTracks(vararg favTracks: ItuneEntity)
+
+    @Query("SELECT * FROM " + Constants.FAV_TRACK_INFO + " where " + Constants.TRACK_ID + " = :favTrackId")
+    fun getFavTrack(favTrackId: String): ItuneEntity?
 }

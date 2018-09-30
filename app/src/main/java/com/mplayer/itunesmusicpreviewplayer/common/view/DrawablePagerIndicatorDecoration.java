@@ -71,7 +71,7 @@ public class DrawablePagerIndicatorDecoration extends RecyclerView.ItemDecoratio
         float indicatorStartX = (parent.getWidth() - indicatorTotalWidth) / 2F;
 
         // center vertically in the allotted space
-        float indicatorPosY = (parent.getHeight() - mIndicatorHeight / 2F) + mIndicatorItemMargin;
+        float indicatorPosY = parent.getHeight() - (mIndicatorHeight + mIndicatorItemMargin) / 2F;
 
         // draw normal lines
         drawInactiveIndicators(c, indicatorStartX, indicatorPosY, itemCount);

@@ -22,8 +22,7 @@
             android:id="@+id/track_image"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_60dp"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/shape" />
+            android:layout_centerVertical="true" />
 
         <TextView
             android:id="@+id/tv_track_name"

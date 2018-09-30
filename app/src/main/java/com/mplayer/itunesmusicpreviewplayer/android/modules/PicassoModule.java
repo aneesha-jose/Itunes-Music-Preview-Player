@@ -29,7 +29,7 @@ public class PicassoModule {
     @Provides
     public Picasso picasso(OkHttp3Downloader okHttpDownloader, @ApplicationContext Context context) {
         Picasso.Builder builder = new Picasso.Builder(context);
-        return builder.downloader(okHttpDownloader).loggingEnabled(false).build();
+        return builder.downloader(okHttpDownloader).loggingEnabled(true).build();
     }
 
 }

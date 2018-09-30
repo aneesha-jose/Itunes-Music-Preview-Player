@@ -36,4 +36,9 @@ class DataRepository(val apiService: ApiService, val appDatabase: AppDatabase) :
     fun deleteFavTrack(favTrack: ItuneEntity) {
         appDatabase.favTrackInfoDao().deleteFavTracks(favTrack)
     }
+
+    fun isAFavTrack(favTrack: ItuneEntity): Boolean {
+        return appDatabase.favTrackInfoDao().getFavTrack(favTrack.trackId) != null
+    }
+
 }

@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import com.mplayer.itunesmusicpreviewplayer.common.Constants;
 import com.mplayer.itunesmusicpreviewplayer.data.models.ItuneEntity;
 import com.mplayer.itunesmusicpreviewplayer.searchTracks.pojos.ItuneEntityBlockWrapper;
 import com.mplayer.itunesmusicpreviewplayer.utils.Optional;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -29,6 +31,7 @@ import io.reactivex.Flowable;
 
 public class ItunesEntityBlockAdapter extends RecyclerView.Adapter<ItunesEntityBlockAdapter.ViewHolder> {
 
+    private static final String TAG = ItunesEntityBlockAdapter.class.getSimpleName();
     List<ItuneEntityBlockWrapper> items;
     private Listener mListener;
     private Picasso picasso;
@@ -93,9 +96,17 @@ public class ItunesEntityBlockAdapter extends RecyclerView.Adapter<ItunesEntityB
         picasso.load(Optional.orElse(ituneEntity.getArtworkUrl60(), "").get())
                 .placeholder(drawable)
                 .error(drawable)
-                .fit()
-                .noFade()
-                .into(viewHolder.trackImage);
+                .into(viewHolder.trackImage, new Callback() {
+                    @Override
+                    public void onSuccess() {
+
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        Log.e(TAG, e.getMessage(), e);
+                    }
+                });
     }
 
     @Override
